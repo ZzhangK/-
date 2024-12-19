@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园跑腿服务</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/th.jpg" alt="校园跑腿" class="logo-img">
+                <span>校园跑腿系统</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" id="homeLink">首页</a>
+                <a href="#" id="publishTaskLink">发布任务</a>
+                <a href="#" id="personalCenterLink">个人中心</a>
+                <a href="#" id="loginLink">登录</a>
+                <a href="#" id="registerLink">注册</a>
+                <a href="#" id="logoutLink" class="hidden">退出</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 任务列表区域 -->
+        <section id="taskList" class="section">
+            <h2>最新任务</h2>
+            <div class="task-container"></div>
+        </section>
+
+        <!-- 登录表单 -->
+        <section id="loginForm" class="section hidden">
+            <h2>用户登录</h2>
+            <form>
+                <input type="text" id="loginUsername" placeholder="用户名" required>
+                <input type="password" id="loginPassword" placeholder="密码" required>
+                <button type="submit">登录</button>
+            </form>
+        </section>
+
+        <!-- 发布任务表单 -->
+        <section id="publishTask" class="section hidden">
+            <h2>发布任务</h2>
+            <form>
+                <input type="text" id="taskTitle" placeholder="任务标题" required>
+                <textarea id="taskDescription" placeholder="任务描述" required></textarea>
+                <input type="number" id="taskReward" placeholder="悬赏金额" required>
+                <input type="datetime-local" id="taskDeadline" required>
+                <button type="submit">发布</button>
+            </form>
+        </section>
+
+        <!-- 注册表单 -->
+        <section id="registerForm" class="section hidden">
+            <h2>用户注册</h2>
+            <form id="registerFormElement">
+                <input type="text" id="registerUsername" placeholder="用户名" required>
+                <input type="password" id="registerPassword" placeholder="密码" required>
+                <input type="password" id="confirmPassword" placeholder="确认密码" required>
+                <input type="tel" id="phone" placeholder="手机号码" required>
+                <input type="text" id="studentId" placeholder="学号" required>
+                <button type="submit">注册</button>
+            </form>
+        </section>
+
+        <!-- 个人中心 -->
+        <section id="personalCenter" class="section hidden">
+            <h2>个人中心</h2>
+            <div class="profile-info">
+                <h3>基本信息</h3>
+                <form id="profileForm">
+                    <input type="text" id="profileUsername" placeholder="用户名" readonly>
+                    <input type="tel" id="profilePhone" placeholder="手机号码">
+                    <input type="text" id="profileStudentId" placeholder="学号" readonly>
+                    <button type="submit">保存修改</button>
+                </form>
+            </div>
+            <div class="task-history">
+                <h3>我发布的任务</h3>
+                <div id="myPublishedTasks" class="task-container"></div>
+                
+                <h3>我接受的任务</h3>
+                <div id="myAcceptedTasks" class="task-container"></div>
+            </div>
+        </section>
+
+        <!-- 任务详情 -->
+        <section id="taskDetail" class="section hidden">
+            <h2>任务详情</h2>
+            <div class="task-detail-content"></div>
+            <button id="acceptTaskBtn" class="hidden">接受任务</button>
+            <button id="completeTaskBtn" class="hidden">完成任务</button>
+        </section>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/task.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
